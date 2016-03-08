@@ -665,6 +665,10 @@ class DB {
   // Needed for StackableDB
   virtual DB* GetRootDB() { return this; }
 
+  // Default implementation, because not all implementations of DB have a
+  // cache.
+  virtual size_t GetCacheUsage() const { return 0; }
+
  private:
   // No copying allowed
   DB(const DB&);

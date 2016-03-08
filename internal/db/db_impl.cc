@@ -4736,4 +4736,8 @@ Status DBImpl::GetLatestSequenceForKeyFromMemtable(SuperVersion* sv,
 }
 #endif  // ROCKSDB_LITE
 
+size_t DBImpl::GetCacheUsage() const {
+	return table_cache_->GetUsage();
+}
+
 }  // namespace rocksdb

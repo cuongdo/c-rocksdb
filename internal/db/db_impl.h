@@ -787,6 +787,8 @@ class DBImpl : public DB {
   bool GetIntPropertyInternal(ColumnFamilyHandle* column_family,
                               DBPropertyType property_type,
                               bool need_out_of_mutex, uint64_t* value);
+
+  virtual size_t GetCacheUsage() const override;
 };
 
 // Sanitize db options.  The caller should delete result.info_log if
